@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Note Taking App</title>
+<style>
+     body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+     }
+
+     .app-container {
+          background-color: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          width: 300px;
+     }
+
+     h1 {
+          text-align: center;
+     }
+
+     form {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+     }
+
+     input[type="text"] {
+          width: 70%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid #ddd;
+     }
+
+     button {
+          padding: 10px;
+          border: none;
+          background-color: #28a745;
+          color: white;
+          border-radius: 4px;
+          cursor: pointer;
+     }
+
+     button:hover {
+          background-color: #218838;
+     }
+
+     ul {
+          list-style-type: none;
+          padding: 0;
+     }
+
+     li {
+          background-color: #f9f9f9;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+     }
+
+     li button {
+          background-color: #dc3545;
+          border: none;
+          color: white;
+          padding: 5px;
+          border-radius: 4px;
+          cursor: pointer;
+     }
+
+     li button:hover {
+          background-color: #c82333;
+     }
+</style>
+</head>
+<body>
+<div class="app-container">
+     <h1>Note Taking App</h1>
+     <form id="note-form">
+          <input type="text" id="note-input" placeholder="Enter your note..." required>
+          <button type="submit">Add Note</button>
+     </form>
+     <ul id="note-list"></ul>
+</div>
+<script>
+     // Get elements from the DOM
+     const noteForm = document.getElementById('note-form');
+     const noteInput = document.getElementById('note-input');
+     const noteList = document.getElementById('note-list');
+
+     // Function to create a new note element
+     function createNoteElement(noteText) {
+          const li = document.createElement('li');
+          li.textContent = noteText;
+
+          // Create delete button for each note
+          const deleteBtn = document.createElement('button');
+          deleteBtn.textContent = 'Delete';
+          deleteBtn.onclick = () => {
+               li.remove();
+          };
+
+          li.appendChild(deleteBtn);
+          return li;
+     }
+
+     // Function to add a new note
+     function addNote(event) {
+          event.preventDefault();  // Prevent form submission
+
+          const noteText = noteInput.value;
+          if (noteText.trim() !== '') {
+               const noteElement = createNoteElement(noteText);
+               noteList.appendChild(noteElement);
+               noteInput.value = '';  // Clear the input field
+          }
+     }
+
+     // Event listener for the form submission
+     noteForm.addEventListener('submit', addNote);
+</script>
+</body>
+</html>

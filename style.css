@@ -1,0 +1,112 @@
+body {
+  background-color: #202124;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-box {
+  margin-top: 30px;
+  border: solid #969696 1px;
+  display: grid;
+  grid-template-columns: auto;
+  border-radius: 6px;
+  box-shadow: 3px 5px #1717176c;
+}
+.input {
+  background-color: #202124;
+  border: none;
+  /* border: solid rgb(132, 131, 131) 1px; */
+  border-radius: 5px;
+  width: 400px;
+  height: 30px;
+  color: white;
+  font-family: "Franklin Gothic Medium";
+  padding: 10px 10px 10px 20px;
+}
+.title-input {
+  display: none;
+}
+
+input::placeholder {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  color: #969696;
+  font-size: 14px;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+.add-btn {
+  margin-left: 330px;
+}
+
+.close-btn,
+.add-btn {
+  margin-bottom: 10px;
+  /* width: 20px; */
+  background-color: #202124;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 6px;
+}
+
+button:hover {
+  background-color: #3b3d3f;
+  border-radius: 5px;
+}
+.btn-display {
+  display: none;
+}
+
+.note-container {
+  width: 220px;
+  max-height: auto;
+  overflow-y: auto;
+  border: solid 1px #969696;
+  background-color: none;
+  border-radius: 5px;
+  margin: 50px 10px 20px;
+  height: auto;
+}
+
+.title-note {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  /* border: solid 1px #969696; */
+  color: white;
+  padding: 12px 16px 12px 16px;
+}
+.note-text {
+  /* border: solid 1px #969696; */
+  color: white;
+  padding: 12px 16px 12px 16px;
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+}
+.container-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+@media (max-width: 600px) {
+     .container-main {
+       flex-direction: column; /* Changes flex direction to column */
+       align-items: center; /* Centers the child divs */
+     }
+   
+     .note-container {
+       width: 90%; /* Makes divs wider to fill more space */
+     }
+   }
+
+   ::-webkit-scrollbar {
+     width: 12px; /* Width of the vertical scrollbar */
+     height: 12px; /* Height of the horizontal scrollbar */
+   }

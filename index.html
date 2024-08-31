@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Note</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+     <form class="input-box" id="input-form">
+          <input class="input title-input" id="js-input-title" placeholder="Title">
+
+          <input class="input note-input-text" id="js-input-note" onfocus="inputNoteClicked()" id="js-input-text" placeholder="Take a note...">
+
+          <div class="button-container">
+          <button class="add-btn btn-display" id="add-btn" onclick="buttonfun();">Add</button>
+
+          <button class="close-btn btn-display" type="submit" onclick="buttonfun()" id="close-btn" >Close</button>
+          </div>
+     </form> 
+</div>
+
+<div class="container-main" id="jsNoteAll">
+     <!-- <div class="note-container" id="note-container">
+          <div class="title-note" id="title-note"></div>
+          <div class="note-text" id="note-text"></div>
+     </div> -->
+</div>
+<script src="script.js"></script>
+</body>
+</html>
