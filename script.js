@@ -6,9 +6,7 @@ const inputTitle = document.getElementById("js-input-title");
 const titleNote = document.getElementById("title-note");
 const bodyNote = document.getElementById("js-input-note");
 
-
 const data =[];
-
 
 function inputNoteClicked(){
      document.getElementById('js-input-title').classList.remove('title-input');
@@ -20,8 +18,7 @@ function buttonfun(){
      document.getElementById('js-input-title').classList.add('title-input');
      document.getElementById('close-btn').classList.add('btn-display');
      document.getElementById('add-btn').classList.add('btn-display');
-     }
-
+     };
 console.log('working');
 
 //an eventlistener for add-btn
@@ -36,7 +33,6 @@ const formValidation = ()=>{
           console.log("empty");
      }
      else{
-          console.log("not empty");
           acceptData();
      }
 };
@@ -49,12 +45,12 @@ const acceptData = () => {
 };
 
 const createNote = () =>{
-noteContainer.innerHTML = data.map((note, index) => `
-        <div class="note-container" id="note-${index}">
-            <div class="title-note">${note.title}</div>
-            <div class="note-text">${note.note}</div>
-        </div>
-    `);
+noteContainer.innerHTML +=`
+     <div class="note-container">
+          <div class="title-note">${data.title}</div>
+          <div class="note-text">${data.note}</div>
+     </div>
+`;
      inputTitle.value = '';
      bodyNote.value = '';
 }

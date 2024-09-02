@@ -65,13 +65,11 @@ button:hover {
 
 .note-container {
   width: 220px;
-  max-height: auto;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   border: solid 1px #969696;
   background-color: none;
   border-radius: 5px;
   margin: 50px 10px 20px;
-  height: auto;
 }
 
 .title-note {
