@@ -50,9 +50,11 @@ noteContainer.innerHTML +=`
           <div class="title-note">${data.title}</div>
           <div class="note-text">${data.note}</div>
      </div>
-`;
+`;    noteContainer.style.height = `${noteText.offsetHeight}px`;
      inputTitle.value = '';
      bodyNote.value = '';
 }
+
+const noteText = document.getElementById("note-text");
 
 
