@@ -1,5 +1,8 @@
 body {
   background-color: #202124;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 .container {
   display: flex;
@@ -69,11 +72,18 @@ button:hover {
   border: solid 1px #969696;
   background-color: none;
   border-radius: 5px;
-  margin: 50px 10px 20px;
-  height: 100px;  
+  margin: 30px 20px ; 
   overflow-y: scroll;
+  display: inline-block;
+  vertical-align: top;
+  height: auto;
 }
-
+.note-container:hover .trash-bin{
+     opacity: 0.5;
+}
+.note-container:hover .rewrite-icon{
+     opacity: 0.5;
+}
 .title-note {
   font-family: Helvetica, sans-serif;
   font-size: 16px;
@@ -89,12 +99,19 @@ button:hover {
   font-size: 14px;
   font-family: Helvetica, sans-serif;
 }
-.container-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+.trash-bin{
+  cursor: pointer;
+  margin-left: 10px;
+  opacity: 0;
+  margin-bottom: 5px;
 }
+.rewrite-icon{
+     cursor: pointer;
+     margin-left: 150px;
+     opacity: 0;
+     margin-bottom: 5px;
+}
+
 @media (max-width: 600px) {
      .container-main {
        flex-direction: column; /* Changes flex direction to column */
