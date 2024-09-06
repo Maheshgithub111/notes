@@ -9,20 +9,18 @@ const closeBtnElement = document.getElementById("close-btn");
 
 const data = [];
 
-const createNote = (note) => {
-     noteContainer.innerHTML += `
+const createNoteTemplate = (note) => {
+  noteContainer.innerHTML += `
         <div class="note-container">
              <div class="title-note">${note.title}</div>
                   <div class="note-text">${note.note}</div>
                       <img class="rewrite-icon" width="20" height="20" src="https://img.icons8.com/pastel-glyph/128/FFFFFF/edit--v1.png" alt="edit--v1"/>
                   <img class="trash-bin" width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/filled-trash.png" alt="filled-trash"/>
-             
         </div>`;
 
-     inputTitle.value = "";
-     bodyNote.value = "";
+  inputTitle.value = "";
+  bodyNote.value = "";
 };
- 
 
 function inputNoteClicked() {
   document.getElementById("js-input-title").classList.remove("title-input");
@@ -53,7 +51,7 @@ createBtn.addEventListener("click", (e) => {
 
 function renderData() {
   const data = JSON.parse(localStorage.getItem("data")) || [];
-  data.forEach(createNote);
+  data.forEach(createNoteTemplate);
 }
 
 // just a arrow function
@@ -70,12 +68,22 @@ const acceptData = () => {
   const note = {
     title: inputTitle.value,
     note: bodyNote.value,
+    id: uuidv4(),
   };
   data.push(note);
   console.log(data);
-  createNote(note);
-  renderData();
+  createNoteTemplate(note);
 };
 
 renderData();
 
+function uuidv4() {
+     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+       var r = Math.random() * 16 | 0,
+           v = c == 'x' ? r : (r & 0x3 | 0x8);
+       return v.toString(16);
+     });
+   }
+   
+const myUUID = uuidv4();
+console.log(myUUID);
