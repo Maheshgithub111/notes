@@ -6,6 +6,7 @@ const inputTitle = document.getElementById("js-input-title");
 const titleNote = document.getElementById("title-note");
 const bodyNote = document.getElementById("js-input-note");
 const closeBtnElement = document.getElementById("close-btn");
+const myUUID = uuidv4();
 
 const data = [];
 
@@ -15,7 +16,7 @@ const createNoteTemplate = (note) => {
              <div class="title-note">${note.title}</div>
                   <div class="note-text">${note.note}</div>
                       <img class="rewrite-icon" width="20" height="20" src="https://img.icons8.com/pastel-glyph/128/FFFFFF/edit--v1.png" alt="edit--v1"/>
-                  <img class="trash-bin" width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/filled-trash.png" alt="filled-trash"/>
+                  <img class="trash-bin" onclick= "deleteNote('${note.id}')" width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/filled-trash.png" alt="filled-trash"/>
         </div>`;
 
   inputTitle.value = "";
@@ -51,6 +52,7 @@ createBtn.addEventListener("click", (e) => {
 
 function renderData() {
   const data = JSON.parse(localStorage.getItem("data")) || [];
+  noteContainer.innerHTML = '';
   data.forEach(createNoteTemplate);
 }
 
@@ -75,7 +77,18 @@ const acceptData = () => {
   createNoteTemplate(note);
 };
 
-renderData();
+function deleteNote(id){
+     let data = JSON.parse(localStorage.getItem('data'))
+     data = data.filter(note => note.id !== id);
+     localStorage.setItem('data', JSON.stringify(data));
+     renderNote();
+     console.log(data);
+}
+function renderNote() {
+     const data = JSON.parse(localStorage.getItem("data")) || [];
+     noteContainer.innerHTML = '';
+     data.forEach(createNoteTemplate);
+   }
 
 function uuidv4() {
      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -85,5 +98,5 @@ function uuidv4() {
      });
    }
    
-const myUUID = uuidv4();
-console.log(myUUID);
+
+renderData();
