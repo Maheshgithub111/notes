@@ -3,11 +3,14 @@ body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  z-index: 0;
+  position: relative;
 }
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .input-box {
   margin-top: 30px;
@@ -65,18 +68,21 @@ button:hover {
 .btn-display {
   display: none;
 }
-
+.container-main{
+     margin-top: -80px;
+}
 .note-container {
   width: 220px;
-  /* overflow-y: auto; */
+  max-height: 300px;
   border: solid 1px #969696;
   background-color: none;
   border-radius: 5px;
-  margin: 30px 20px ; 
+  margin: 30px 20px; 
   overflow-y: scroll;
   display: inline-block;
   vertical-align: top;
   height: auto;
+  
 }
 .note-container:hover .trash-bin{
      opacity: 0.5;
@@ -116,6 +122,8 @@ button:hover {
      .container-main {
        flex-direction: column; /* Changes flex direction to column */
        align-items: center; /* Centers the child divs */
+       
+       
      }
    
      .note-container {
@@ -127,3 +135,55 @@ button:hover {
      width: 12px; /* Width of the vertical scrollbar */
      height: 12px; /* Height of the horizontal scrollbar */
    }
+
+/* focused area */
+
+.focusedContainer{
+     background-color: #202124;
+     width: 50%;
+     min-width: 130px;
+     height: auto;
+     border: solid 1px #969696;
+     border-radius: 5px;
+     position: absolute;
+     display: none;
+}
+
+.focusedContainerMain{
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     z-index: -1;
+     margin-top: 80px;
+     opacity: 1;
+     
+}
+
+.title, .note{
+     color: white;
+     font-family: Arial, Helvetica, sans-serif;
+     margin: 5px;
+}
+
+.note{
+     /* border: 1px solid whitesmoke; */
+     padding: 12px;
+     font-weight: 200;
+     font-size:14px;
+}
+
+.title{
+     /* border: 1px solid white; */
+     padding: 12px;
+     font-weight: 600;
+     font-size:18px;
+}
+
+.closebtnOnFocused{
+     margin-left: 85%;
+     background-color:#202124;
+     border: none;
+     color: white;
+     margin-bottom: 10px;
+     padding: 8px;
+}
