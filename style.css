@@ -65,12 +65,12 @@ button:hover {
   background-color: #3b3d3f;
   border-radius: 5px;
 }
+
 .btn-display {
   display: none;
 }
-.container-main{
-     margin-top: -80px;
-}
+
+
 .note-container {
   width: 220px;
   max-height: 300px;
@@ -82,14 +82,15 @@ button:hover {
   display: inline-block;
   vertical-align: top;
   height: auto;
-  
 }
-.note-container:hover .trash-bin{
+
+.note-container:hover .trash-bin {
      opacity: 0.5;
 }
 .note-container:hover .rewrite-icon{
      opacity: 0.5;
 }
+
 .title-note {
   font-family: Helvetica, sans-serif;
   font-size: 16px;
@@ -98,6 +99,7 @@ button:hover {
   color: white;
   padding: 12px 16px 12px 16px;
 }
+
 .note-text {
   /* border: solid 1px #969696; */
   color: white;
@@ -122,8 +124,7 @@ button:hover {
      .container-main {
        flex-direction: column; /* Changes flex direction to column */
        align-items: center; /* Centers the child divs */
-       
-       
+
      }
    
      .note-container {
@@ -136,28 +137,7 @@ button:hover {
      height: 12px; /* Height of the horizontal scrollbar */
    }
 
-/* focused area */
 
-.focusedContainer{
-     background-color: #202124;
-     width: 50%;
-     min-width: 130px;
-     height: auto;
-     border: solid 1px #969696;
-     border-radius: 5px;
-     position: absolute;
-     display: none;
-}
-
-.focusedContainerMain{
-     display: flex;
-     justify-content: center;
-     align-items:center;
-     z-index: -1;
-     margin-top: 80px;
-     opacity: 1;
-     
-}
 
 .title, .note{
      color: white;
@@ -179,6 +159,30 @@ button:hover {
      font-size:18px;
 }
 
+/* focused area */
+
+.focusedContainer{
+     background-color: #202124;
+     width: 50%;
+     min-width: 130px;
+     height: auto;
+     border: solid 1px #969696;
+     border-radius: 5px;
+     position: absolute;
+}
+
+
+.focusedContainerMain{
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     z-index: -1;
+     margin-top: 80px;
+     opacity: 1;
+     
+}
+
+
 .closebtnOnFocused{
      margin-left: 85%;
      background-color:#202124;
@@ -186,4 +190,25 @@ button:hover {
      color: white;
      margin-bottom: 10px;
      padding: 8px;
+}
+.savebtnOnFocused,
+.closebtnOnFocused {
+  background-color: #202124;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 5px;
+}
+
+.savebtnOnFocused:hover,
+.closebtnOnFocused:hover {
+  background-color: #3b3d3f;
+  border-radius: 5px;
+}
+
+.buttonFocusedContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
 }
